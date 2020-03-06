@@ -168,13 +168,22 @@ class Scoresheet(QWidget):
 
         self.scoreBox.setLayout(self.scoreLayout)
     
-    def createDropDown(self, position, qLabel, qPoint=None):
-        points = [" ", "10", "20", "30"]
-        if not position > 20:
-            qPoint.addItems(points)
-        self.scoreLayout.addWidget(qLabel, 1, position)
-        self.scoreLayout.addWidget(qPoint, 2, position)
+    def createDropDown(self, position, qLabel, qPoint, qType = None):
+        points = [" ", "10", "20", "30"]                                         #Point value list
+        types  = ["Q?", "QQ", "QC", "CA", "ST", "SAQ", "EQ",
+                "ECQ", "STQQ", "STA"]                                            #Question types, Q? being the default, meaning none given. 
+
+        if not position > 20:                                                    #Position 21, 22, and 23 are OT and are always 10
+            qPoint.addItems(points)                                              #if not overtime, add point value to dropdown
         
+        if not qType == None:
+            qType.addItems(types)
+
+        #add widgets to layout
+        self.scoreLayout.addWidget(qLabel, 1, position)                          
+        self.scoreLayout.addWidget(qPoint, 2, position)
+        if not qType == None:
+            self.scoreLayout.addWidget(qType , 3, position)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
