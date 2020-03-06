@@ -150,30 +150,30 @@ class Scoresheet(QWidget):
 
         #OT 1
         self.ot1Label = QLabel("OT1", self)
-        
-        self.createDropDown(21, self.ot1Label)
+        self.ot1Point = QLabel("10", self)
+
+        self.createDropDown(21, self.ot1Label, self.ot1Point)
 
         #OT 2
         self.ot2Label = QLabel("OT2", self)
+        self.ot2Point = QLabel("10", self)
         
-        self.createDropDown(22, self.ot2Label)
+        self.createDropDown(22, self.ot2Label, self.ot2Point)
 
         #OT 3
         self.ot3Label = QLabel("OT3", self)
-        
-        self.createDropDown(23, self.ot3Label)
+        self.ot3Point = QLabel("10", self)
+
+        self.createDropDown(23, self.ot3Label, self.ot3Point)
 
         self.scoreBox.setLayout(self.scoreLayout)
     
     def createDropDown(self, position, qLabel, qPoint=None):
         qPoints = [" ", "10", "20", "30"]
-        if not qPoint == None:
-            qPoint.addItems(qPoints)
-
+        if not position > 20:
+            qPoint.addItems(qPoint)
         self.scoreLayout.addWidget(qLabel, 1, position)
-        
-        if not qPoint == None: 
-            self.scoreLayout.addWidget(qPoint, 2, position)
+        self.scoreLayout.addWidget(qPoint, 2, position)
         
 
 if __name__ == '__main__':
