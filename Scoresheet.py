@@ -171,7 +171,7 @@ class Scoresheet(QWidget):
     def createDropDown(self, position, qLabel, qPoint=None):
         qPoints = [" ", "10", "20", "30"]
         if not position > 20:
-            qPoint.addItems(qPoint)
+            qPoint.addItems(qPoints)
         self.scoreLayout.addWidget(qLabel, 1, position)
         self.scoreLayout.addWidget(qPoint, 2, position)
         
