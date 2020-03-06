@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QWidget, QLabel, QComboBox, QApplication, QGroupBox, QGridLayout, QVBoxLayout
+from PyQt5.QtCore import *
 
 class Scoresheet(QWidget):
 
@@ -201,6 +202,9 @@ class Scoresheet(QWidget):
         
         if not qType == None:
             qType.addItems(types)
+        
+        qLabel.setFixedWidth(55)
+        qLabel.setAlignment(Qt.AlignCenter)
 
         #add widgets to layout
         self.scoreLayout.addWidget(qLabel, 1, position)                          
