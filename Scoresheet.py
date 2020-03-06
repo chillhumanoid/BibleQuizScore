@@ -20,6 +20,13 @@ class Scoresheet(QWidget):
         self.scoreBox = QGroupBox()
         self.scoreLayout = QGridLayout()
 
+        '''
+        Naming Conventions
+        q#Label = Label at the top of each column for the Question number (all single digit numbers have leading 0 for looks. Over time are OT1 OT2 and OT3
+        q#Point = Dropdown for point value of Question
+
+        '''
+
         #Question 1
 
         self.q1Label = QLabel("01", self)
