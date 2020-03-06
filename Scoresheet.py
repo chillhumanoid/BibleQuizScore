@@ -65,68 +65,81 @@ class Scoresheet(QWidget):
 
         #Question 8
         self.q8Label = QLabel("08", self)
+        self.q8Point = QComboBox(self)
 
-        self.createDropDown(8, self.q8Label)
+        self.createDropDown(8, self.q8Label, self.q8Point)
         
         #Question 9
         self.q9Label = QLabel("09", self)
+        self.q9Point = QComboBox(self)
 
-        self.createDropDown(9, self.q9Label)
+        self.createDropDown(9, self.q9Label, self.q9Point)
 
         #Question 10
         self.q10Label = QLabel("10", self)
-        
-        self.createDropDown(10, self.q10Label)
+        self.q10Point = QComboBox(self)
+
+        self.createDropDown(10, self.q10Label, self.q10Point)
 
         #Question 11
         self.q11Label = QLabel("11", self)
-        
-        self.createDropDown(11, self.q11Label)
+        self.q11Point = QComboBox(self)
+
+        self.createDropDown(11, self.q11Label, self.q11Point)
 
         #Question 12
         self.q12Label = QLabel("12", self)
-        
-        self.createDropDown(12, self.q12Label)
+        self.q12Point = QComboBox(self)
+
+        self.createDropDown(12, self.q12Label, self.q12Point)
 
         #Question 13
         self.q13Label = QLabel("13", self)
-        
-        self.createDropDown(13, self.q13Label)
+        self.q13Point = QComboBox(self)
+
+        self.createDropDown(13, self.q13Label, self.q13Point)
 
         #Question 14
         self.q14Label = QLabel("14", self)
-        
-        self.createDropDown(14, self.q14Label)
+        self.q14Point = QComboBox(self)
+
+        self.createDropDown(14, self.q14Label, self.q14Point)
 
         #Question 15
         self.q15Label = QLabel("15", self)
-        
-        self.createDropDown(15, self.q15Label)
+        self.q15Point = QComboBox(self)
+
+        self.createDropDown(15, self.q15Label, self.q15Point)
 
         #Question 16
         self.q16Label = QLabel("16", self)
-        
-        self.createDropDown(16, self.q16Label)
+        self.q16Point = QComboBox(self)
+
+        self.createDropDown(16, self.q16Label, self.q16Point)
 
         #Question 17
         self.q17Label = QLabel("17", self)
-        
-        self.createDropDown(17, self.q17Label)
+        self.q17Point = QComboBox(self)
+
+        self.createDropDown(17, self.q17Label, self.q17Point)
 
         #Question 18
         self.q18Label = QLabel("18", self)
-        
-        self.createDropDown(18, self.q18Label)
+        self.q18Point = QComboBox(self)
+
+        self.createDropDown(18, self.q18Label, self.q18Point)
 
         #Question 19
         self.q19Label = QLabel("19", self)
-        
-        self.createDropDown(19, self.q19Label)
+        self.q19Point = QComboBox(self)
+
+        self.createDropDown(19, self.q19Label, self.q19Point)
 
         #Question 20
         self.q20Label = QLabel("20", self)
-        
-        self.createDropDown(20, self.q20Label)
+        self.q20Point = QComboBox(self)
+
+        self.createDropDown(20, self.q20Label, self.q20Point)
 
         #OT 1
         self.ot1Label = QLabel("OT1", self)
