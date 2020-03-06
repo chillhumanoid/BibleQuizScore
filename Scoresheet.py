@@ -66,44 +66,94 @@ class Scoresheet(QWidget):
         #Question 8
         self.q8Label = QLabel("08", self)
 
+        self.createDropDown(8, self.q8Label)
+        
         #Question 9
+        self.q9Label = QLabel("09", self)
+
+        self.createDropDown(9, self.q9Label)
 
         #Question 10
+        self.q10Label = QLabel("10", self)
+        
+        self.createDropDown(10, self.q10Label)
 
         #Question 11
+        self.q11Label = QLabel("11", self)
+        
+        self.createDropDown(11, self.q11Label)
 
         #Question 12
+        self.q12Label = QLabel("12", self)
+        
+        self.createDropDown(12, self.q12Label)
 
         #Question 13
+        self.q13Label = QLabel("13", self)
+        
+        self.createDropDown(13, self.q13Label)
 
         #Question 14
+        self.q14Label = QLabel("14", self)
+        
+        self.createDropDown(14, self.q14Label)
 
         #Question 15
+        self.q15Label = QLabel("15", self)
+        
+        self.createDropDown(15, self.q15Label)
 
         #Question 16
+        self.q16Label = QLabel("16", self)
+        
+        self.createDropDown(16, self.q16Label)
 
         #Question 17
+        self.q17Label = QLabel("17", self)
+        
+        self.createDropDown(17, self.q17Label)
 
         #Question 18
+        self.q18Label = QLabel("18", self)
+        
+        self.createDropDown(18, self.q18Label)
 
         #Question 19
+        self.q19Label = QLabel("19", self)
+        
+        self.createDropDown(19, self.q19Label)
 
         #Question 20
+        self.q20Label = QLabel("20", self)
+        
+        self.createDropDown(20, self.q20Label)
 
         #OT 1
+        self.ot1Label = QLabel("OT1", self)
+        
+        self.createDropDown(21, self.ot1Label)
 
         #OT 2
+        self.ot2Label = QLabel("OT2", self)
+        
+        self.createDropDown(22, self.ot2Label)
 
         #OT 3
+        self.ot3Label = QLabel("OT3", self)
+        
+        self.createDropDown(23, self.ot3Label)
 
         self.scoreBox.setLayout(self.scoreLayout)
     
     def createDropDown(self, position, qLabel, qPoint=None):
         qPoints = [" ", "10", "20", "30"]
-        qPoint.addItems(qPoints)
+        if not qPoint == None:
+            qPoint.addItems(qPoints)
 
         self.scoreLayout.addWidget(qLabel, 1, position)
-        self.scoreLayout.addWidget(qPoint, 2, position)
+        
+        if not qPoint == None: 
+            self.scoreLayout.addWidget(qPoint, 2, position)
         
 
 if __name__ == '__main__':
