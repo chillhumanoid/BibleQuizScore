@@ -192,16 +192,23 @@ class Scoresheet(QWidget):
 
         self.scoreBox.setLayout(self.scoreLayout)
     
-    def createDropDown(self, position, qLabel, qPoint, qType = None):
+    def createDropDown(self, position, qLabel, qPoint, qType, qPart = None):
         points = [" ", "10", "20", "30"]                                         #Point value list
         types  = ["Q?", "QQ", "QC", "CA", "ST", "SAQ", "EQ",
                 "ECQ", "STQQ", "STA"]                                            #Question types, Q? being the default, meaning none given. 
+        parts  = [" ", "2A", "2Q2A", "2Q3A", "2Q4A", "2Q5A", 
+                  "2Q6A", "3A", "3Q3A", "3Q4A", "3Q5A", "3Q6A",
+                  "4A", "5A", "6A", "7A", "8A", "9A", "10A",
+                  "11A", "12A", "13A", "14A", "15A", "16A",
+                  "17A", "18A", "19A", "20A"]                                    #Question parts, " " being the default
 
         if not position > 20:                                                    #Position 21, 22, and 23 are OT and are always 10
             qPoint.addItems(points)                                              #if not overtime, add point value to dropdown
         
-        if not qType == None:
-            qType.addItems(types)
+        
+        qType.addItems(types)
+        if not qPart == None:
+            qPart.addItems(parts)
         
         qLabel.setFixedWidth(55)
         qLabel.setAlignment(Qt.AlignCenter)
