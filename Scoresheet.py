@@ -10,12 +10,306 @@ class Scoresheet(QWidget):
 
     def initUI(self):
         self.createGridLayout()
+        self.createHomeTeam()
 
         windowLayout = QVBoxLayout()
         windowLayout.addWidget(self.scoreBox)
+        windowLayout.addWidget(self.homeTeam)
         self.setLayout(windowLayout)
         
         self.show()
+    def createHomeTeam(self):
+        self.homeTeam = QGroupBox()
+        self.homeLayout = QGridLayout()
+        '''
+        NAMING CONVENTIONS
+
+        h = Home
+        # = seat number or question number (seat number first, then question number
+        q = quizzer (main quizzer)
+        s = substitute
+    
+        h#q#Point - Point dropdown for home quizzer at seat # for question #
+        h#s#Point - Point dropdown for home sub     at seat # for question #
+        '''
+
+        #Question 1 
+        self.h1q1Point = QComboBox(self)
+        self.h1s1Point = QComboBox(self)
+        self.h2q1Point = QComboBox(self)
+        self.h2s1Point = QComboBox(self)
+        self.h3q1Point = QComboBox(self)
+        self.h3s1Point = QComboBox(self)
+
+        self.createTeam(1, self.h1q1Point, self.h1s1Point, self.h2q1Point,
+                        self.h2s1Point, self.h3q1Point, self.h3s1Point)
+
+        #Question 2 
+        self.h1q2Point = QComboBox(self)
+        self.h1s2Point = QComboBox(self)
+        self.h2q2Point = QComboBox(self)
+        self.h2s2Point = QComboBox(self)
+        self.h3q2Point = QComboBox(self)
+        self.h3s2Point = QComboBox(self)
+
+        self.createTeam(2, self.h1q2Point, self.h1s2Point, self.h2q2Point,
+                        self.h2s2Point, self.h3q2Point, self.h3s2Point)
+
+
+        #Question 3 
+        self.h1q3Point = QComboBox(self)
+        self.h1s3Point = QComboBox(self)
+        self.h2q3Point = QComboBox(self)
+        self.h2s3Point = QComboBox(self)
+        self.h3q3Point = QComboBox(self)
+        self.h3s3Point = QComboBox(self)
+
+        self.createTeam(3, self.h1q3Point, self.h1s3Point, self.h2q3Point,
+                        self.h2s3Point, self.h3q3Point, self.h3s3Point)
+
+
+        #Question 4 
+        self.h1q4Point = QComboBox(self)
+        self.h1s4Point = QComboBox(self)
+        self.h2q4Point = QComboBox(self)
+        self.h2s4Point = QComboBox(self)
+        self.h3q4Point = QComboBox(self)
+        self.h3s4Point = QComboBox(self)
+
+        self.createTeam(4, self.h1q4Point, self.h1s4Point, self.h2q4Point,
+                        self.h2s4Point, self.h3q4Point, self.h3s4Point)
+
+
+        #Question 5 
+        self.h1q5Point = QComboBox(self)
+        self.h1s5Point = QComboBox(self)
+        self.h2q5Point = QComboBox(self)
+        self.h2s5Point = QComboBox(self)
+        self.h3q5Point = QComboBox(self)
+        self.h3s5Point = QComboBox(self)
+
+        self.createTeam(5, self.h1q5Point, self.h1s5Point, self.h2q5Point,
+                        self.h2s5Point, self.h3q5Point, self.h3s5Point)
+
+
+        #Question 6 
+        self.h1q6Point = QComboBox(self)
+        self.h1s6Point = QComboBox(self)
+        self.h2q6Point = QComboBox(self)
+        self.h2s6Point = QComboBox(self)
+        self.h3q6Point = QComboBox(self)
+        self.h3s6Point = QComboBox(self)
+
+        self.createTeam(6, self.h1q6Point, self.h1s6Point, self.h2q6Point,
+                        self.h2s6Point, self.h3q6Point, self.h3s6Point)
+
+
+        #Question 7 
+        self.h1q7Point = QComboBox(self)
+        self.h1s7Point = QComboBox(self)
+        self.h2q7Point = QComboBox(self)
+        self.h2s7Point = QComboBox(self)
+        self.h3q7Point = QComboBox(self)
+        self.h3s7Point = QComboBox(self)
+
+        self.createTeam(7, self.h1q7Point, self.h1s7Point, self.h2q7Point,
+                        self.h2s7Point, self.h3q7Point, self.h3s7Point)
+
+
+        #Question 8 
+        self.h1q8Point = QComboBox(self)
+        self.h1s8Point = QComboBox(self)
+        self.h2q8Point = QComboBox(self)
+        self.h2s8Point = QComboBox(self)
+        self.h3q8Point = QComboBox(self)
+        self.h3s8Point = QComboBox(self)
+
+        self.createTeam(8, self.h1q8Point, self.h1s8Point, self.h2q8Point,
+                        self.h2s8Point, self.h3q8Point, self.h3s8Point)
+
+
+        #Question 9 
+        self.h1q9Point = QComboBox(self)
+        self.h1s9Point = QComboBox(self)
+        self.h2q9Point = QComboBox(self)
+        self.h2s9Point = QComboBox(self)
+        self.h3q9Point = QComboBox(self)
+        self.h3s9Point = QComboBox(self)
+
+        self.createTeam(9, self.h1q9Point, self.h1s9Point, self.h2q9Point,
+                        self.h2s9Point, self.h3q9Point, self.h3s9Point)
+
+
+        #Question 10 
+        self.h1q10Point = QComboBox(self)
+        self.h1s10Point = QComboBox(self)
+        self.h2q10Point = QComboBox(self)
+        self.h2s10Point = QComboBox(self)
+        self.h3q10Point = QComboBox(self)
+        self.h3s10Point = QComboBox(self)
+
+        self.createTeam(10, self.h1q10Point, self.h1s10Point, self.h2q10Point,
+                        self.h2s10Point, self.h3q10Point, self.h3s10Point)
+
+
+        #Question 11 
+        self.h1q11Point = QComboBox(self)
+        self.h1s11Point = QComboBox(self)
+        self.h2q11Point = QComboBox(self)
+        self.h2s11Point = QComboBox(self)
+        self.h3q11Point = QComboBox(self)
+        self.h3s11Point = QComboBox(self)
+
+        self.createTeam(11, self.h1q11Point, self.h1s11Point, self.h2q11Point,
+                        self.h2s11Point, self.h3q11Point, self.h3s11Point)
+
+
+        #Question 12 
+        self.h1q12Point = QComboBox(self)
+        self.h1s12Point = QComboBox(self)
+        self.h2q12Point = QComboBox(self)
+        self.h2s12Point = QComboBox(self)
+        self.h3q12Point = QComboBox(self)
+        self.h3s12Point = QComboBox(self)
+
+        self.createTeam(12, self.h1q12Point, self.h1s12Point, self.h2q12Point,
+                        self.h2s12Point, self.h3q12Point, self.h3s12Point)
+
+
+        #Question 13 
+        self.h1q13Point = QComboBox(self)
+        self.h1s13Point = QComboBox(self)
+        self.h2q13Point = QComboBox(self)
+        self.h2s13Point = QComboBox(self)
+        self.h3q13Point = QComboBox(self)
+        self.h3s13Point = QComboBox(self)
+
+        self.createTeam(13, self.h1q13Point, self.h1s13Point, self.h2q13Point,
+                        self.h2s13Point, self.h3q13Point, self.h3s13Point)
+
+
+        #Question 14 
+        self.h1q14Point = QComboBox(self)
+        self.h1s14Point = QComboBox(self)
+        self.h2q14Point = QComboBox(self)
+        self.h2s14Point = QComboBox(self)
+        self.h3q14Point = QComboBox(self)
+        self.h3s14Point = QComboBox(self)
+
+        self.createTeam(14, self.h1q14Point, self.h1s14Point, self.h2q14Point,
+                        self.h2s14Point, self.h3q14Point, self.h3s14Point)
+
+
+        #Question 15 
+        self.h1q15Point = QComboBox(self)
+        self.h1s15Point = QComboBox(self)
+        self.h2q15Point = QComboBox(self)
+        self.h2s15Point = QComboBox(self)
+        self.h3q15Point = QComboBox(self)
+        self.h3s15Point = QComboBox(self)
+
+        self.createTeam(15, self.h1q15Point, self.h1s15Point, self.h2q15Point,
+                        self.h2s15Point, self.h3q15Point, self.h3s15Point)
+
+
+        #Question 16 
+        self.h1q16Point = QComboBox(self)
+        self.h1s16Point = QComboBox(self)
+        self.h2q16Point = QComboBox(self)
+        self.h2s16Point = QComboBox(self)
+        self.h3q16Point = QComboBox(self)
+        self.h3s16Point = QComboBox(self)
+
+        self.createTeam(16, self.h1q16Point, self.h1s16Point, self.h2q16Point,
+                        self.h2s16Point, self.h3q16Point, self.h3s16Point)
+
+
+        #Question 17 
+        self.h1q7Point = QComboBox(self)
+        self.h1s7Point = QComboBox(self)
+        self.h2q7Point = QComboBox(self)
+        self.h2s7Point = QComboBox(self)
+        self.h3q7Point = QComboBox(self)
+        self.h3s7Point = QComboBox(self)
+
+        self.createTeam(17, self.h1q17Point, self.h1s17Point, self.h2q17Point,
+                        self.h2s17Point, self.h3q17Point, self.h3s17Point)
+
+
+        #Question 18 
+        self.h1q8Point = QComboBox(self)
+        self.h1s8Point = QComboBox(self)
+        self.h2q8Point = QComboBox(self)
+        self.h2s8Point = QComboBox(self)
+        self.h3q8Point = QComboBox(self)
+        self.h3s8Point = QComboBox(self)
+
+        self.createTeam(18, self.h1q18Point, self.h1s18Point, self.h2q18Point,
+                        self.h2s18Point, self.h3q18Point, self.h3s18Point)
+
+
+        #Question 19 
+        self.h1q9Point = QComboBox(self)
+        self.h1s9Point = QComboBox(self)
+        self.h2q9Point = QComboBox(self)
+        self.h2s9Point = QComboBox(self)
+        self.h3q9Point = QComboBox(self)
+        self.h3s9Point = QComboBox(self)
+
+        self.createTeam(19, self.h1q19Point, self.h1s19Point, self.h2q19Point,
+                        self.h2s19Point, self.h3q19Point, self.h3s19Point)
+
+
+        #Question 20 
+        self.h1q10Point = QComboBox(self)
+        self.h1s10Point = QComboBox(self)
+        self.h2q10Point = QComboBox(self)
+        self.h2s10Point = QComboBox(self)
+        self.h3q10Point = QComboBox(self)
+        self.h3s10Point = QComboBox(self)
+
+        self.createTeam(20, self.h1q20Point, self.h1s20Point, self.h2q20Point,
+                        self.h2s20Point, self.h3q20Point, self.h3s20Point)
+
+
+
+        #Question ot1 
+        self.h1qo1Point = QComboBox(self)
+        self.h1so1Point = QComboBox(self)
+        self.h2qo1Point = QComboBox(self)
+        self.h2so1Point = QComboBox(self)
+        self.h3qo1Point = QComboBox(self)
+        self.h3so1Point = QComboBox(self)
+
+        self.createTeam(21, self.h1qo1Point, self.h1so1Point, self.h2qo1Point,
+                        self.h2so1Point, self.h3qo1Point, self.h3so1Point)
+
+
+        #Question ot2 
+        self.h1qo2Point = QComboBox(self)
+        self.h1so2Point = QComboBox(self)
+        self.h2qo2Point = QComboBox(self)
+        self.h2so2Point = QComboBox(self)
+        self.h3qo2Point = QComboBox(self)
+        self.h3so2Point = QComboBox(self)
+
+        self.createTeam(22, self.h1qo2Point, self.h1so2Point, self.h2qo2Point,
+                        self.h2so2Point, self.h3qo2Point, self.h3so2Point)
+
+
+        #Question ot3 
+        self.h1qo3Point = QComboBox(self)
+        self.h1so3Point = QComboBox(self)
+        self.h2qo3Point = QComboBox(self)
+        self.h2so3Point = QComboBox(self)
+        self.h3qo3Point = QComboBox(self)
+        self.h3so3Point = QComboBox(self)
+
+        self.createTeam(self.h1qo3Point, self.h1so3Point, self.h2qo3Point,
+                        self.h2so3Point, self.h3qo3Point, self.h3so3Point)
+
+
+
 
     def createGridLayout(self):
         self.scoreBox = QGroupBox()
@@ -270,6 +564,24 @@ class Scoresheet(QWidget):
         self.scoreLayout.addWidget(qType,  3, position)
         self.scoreLayout.addWidget(qPart,  4, position)
         self.scoreLayout.addWidget(qNote,  5, position)
+
+    def createTeam(self, position, h1q, h1s, h2q, h2s, h3q, h3s):
+        if position > 20:
+            points = [" ", "10", "-5"]
+            h1q.addItems(points)
+            h1s.addItems(points)
+            h2q.addItems(points)
+            h2s.addItems(points)
+            h3q.addItems(points)
+            h3s.addItems(points)
+
+        self.homeLayout.addWidget(h1q, 1, position)
+        self.homeLayout.addWidget(h1s, 2, position)
+        self.homeLayout.addWidget(h2q, 3, position)
+        self.homeLayout.addWidget(h2s, 4, position)
+        self.homeLayout.addWidget(h3q, 5, position)
+        self.homeLayout.addWidget(h3s, 6, position)
+       
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
