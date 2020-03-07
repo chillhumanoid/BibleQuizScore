@@ -33,4 +33,4 @@ Any question that doesn't have a point value yet will give you the option to sim
 I love spreadsheets, my android app for the Grant Horner Bible Reading System started as a google sheet. But they aren't ideal for mass use. And you have to lock down functionality. This will have the benefit of being a normal executable file. It will, however, have the ability to export to a spreadsheet. 
 
 ## Interested in helping? 
-As you can see the codebase is in python, for more development info, [click here]("Dev Info")
+As you can see the codebase is in python, for more development info, [click here](https://github.com/chillhumanoid/BibleQuizScore/tree/master/Dev%20Info)
