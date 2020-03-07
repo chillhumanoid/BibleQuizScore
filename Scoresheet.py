@@ -216,8 +216,9 @@ class Scoresheet(QWidget):
         #add widgets to layout
         self.scoreLayout.addWidget(qLabel, 1, position)                          
         self.scoreLayout.addWidget(qPoint, 2, position)
-        if not qType == None:
-            self.scoreLayout.addWidget(qType , 3, position)
+        self.scoreLayout.addWidget(qType,  3, position)
+        if not qPart == None:
+            self.scoreLayout.addWidget(qPart , 4, position)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
