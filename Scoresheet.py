@@ -251,21 +251,25 @@ class Scoresheet(QWidget):
 
         if not position > 20:                                                    #Position 21, 22, and 23 are OT and are always 10
             qPoint.addItems(points)                                              #if not overtime, add point value to dropdown
-        
+        else:
+            qPoint.setAlignment(Qt.AlignCenter)
         
         qType.addItems(types)
         qPart.addItems(parts)
         
         qLabel.setFixedWidth(55)
         qLabel.setAlignment(Qt.AlignCenter)
+        qPoint.setFixedWidth(55)
+        qType.setFixedWidth(55)
+        qPart.setFixedWidth(55)
+        qNote.setFixedWidth(55)
 
         #add widgets to layout
         self.scoreLayout.addWidget(qLabel, 1, position)                          
         self.scoreLayout.addWidget(qPoint, 2, position)
         self.scoreLayout.addWidget(qType,  3, position)
         self.scoreLayout.addWidget(qPart,  4, position)
-        if not qNote == None:
-            self.scoreLayout.addWidget(qNote,  5, position)  
+        self.scoreLayout.addWidget(qNote,  5, position)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
