@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QWidget, QLabel, QComboBox, QApplication, QGroupBox, QGridLayout, QVBoxLayout
+from PyQt5.QtWidgets import QWidget, QLabel, QComboBox, QApplication, QGroupBox, QGridLayout, QVBoxLayout, QLineEdit
 from PyQt5.QtCore import *
 
 class Scoresheet(QWidget):
@@ -216,7 +216,7 @@ class Scoresheet(QWidget):
 
         self.scoreBox.setLayout(self.scoreLayout)
     
-    def createDropDown(self, position, qLabel, qPoint, qType, qPart = None):
+    def createDropDown(self, position, qLabel, qPoint, qType, qPart, qNote = None):
         points = [" ", "10", "20", "30"]                                         #Point value list
         types  = ["Q?", "QQ", "QC", "CA", "ST", "SAQ", "EQ",
                 "ECQ", "STQQ", "STA"]                                            #Question types, Q? being the default, meaning none given. 
@@ -231,8 +231,7 @@ class Scoresheet(QWidget):
         
         
         qType.addItems(types)
-        if not qPart == None:
-            qPart.addItems(parts)
+        qPart.addItems(parts)
         
         qLabel.setFixedWidth(55)
         qLabel.setAlignment(Qt.AlignCenter)
@@ -241,8 +240,9 @@ class Scoresheet(QWidget):
         self.scoreLayout.addWidget(qLabel, 1, position)                          
         self.scoreLayout.addWidget(qPoint, 2, position)
         self.scoreLayout.addWidget(qType,  3, position)
-        if not qPart == None:
-            self.scoreLayout.addWidget(qPart , 4, position)
+        self.scoreLayout.addWidget(qPart,  4, position)
+        if not qNote == None:
+            self.scoreLayout.addWidget(qNote,  5, position)  
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
