@@ -24,8 +24,8 @@ class Scoresheet(QWidget):
         '''
         Naming Conventions
         q#Label = Label at the top of each column for the Question number (all single digit numbers have leading 0 for looks. Over time are OT1 OT2 and OT3
-        q#Point = Dropdown for point value of Question
-
+        q#Point = Dropdown for point value of Question  (" " = default)
+        q#Type  = Dropdown for types of the question (Q? = default)
         '''
 
         #Question 1
