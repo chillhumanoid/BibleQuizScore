@@ -45,11 +45,13 @@ class Question(QWidget):
         self.a2bPoints  = QComboBox(self)
         self.a3aPoints  = QComboBox(self)
         self.a3bPoints  = QComboBox(self)
+
+        self.setDropdowns()
         
         if not overtime:
             self.points.currentIndexChanged[int].connect(self.changePoints)
         
-        self.setDropdowns()
+       
 
     def setDropdowns(self):
         pointList = [" ", "10", "20", "30"]
@@ -111,12 +113,18 @@ class Question(QWidget):
     def changePoints(self, i):
         if i == 0:
             pointList = [" ", "+", "-"]
+            self.value = 0
         elif i == 1:
+            self.value = 10
             pointList = [" ", "10", "-5"]
         elif i == 2:
+            self.value = 20
             pointList = [" ", "20", "-10"]
         elif i == 3:
+            self.value = 30
             pointList = [" ", "30", "-15"]
+        
+        self.getIndexes()
 
         self.clearTeam(self.h1aPoints, self.h1bPoints, self.h2aPoints,
                        self.h2bPoints, self.h3aPoints, self.h3bPoints)
@@ -131,6 +139,38 @@ class Question(QWidget):
         self.addPoints(pointList, self.a1aPoints, self.a1bPoints,
                        self.a2aPoints, self.a2bPoints, self.a3aPoints,
                        self.a3bPoints)
+        self.setIndexes()
+
+    def getIndexes(self):
+        self.h1a = self.h1aPoints.currentIndex()
+        self.h1b = self.h1bPoints.currentIndex()
+        self.h2a = self.h2aPoints.currentIndex()
+        self.h2b = self.h2bPoints.currentIndex()
+        self.h3a = self.h3aPoints.currentIndex()
+        self.h3b = self.h3bPoints.currentIndex()
+
+        self.a1a = self.a1aPoints.currentIndex()
+        self.a1b = self.a1bPoints.currentIndex()
+        self.a2a = self.a2aPoints.currentIndex()
+        self.a2b = self.a2bPoints.currentIndex()
+        self.a3a = self.a3aPoints.currentIndex()
+        self.a3b = self.a3bPoints.currentIndex()
+
+    def setIndexes(self):
+        self.h1aPoints.setCurrentIndex(self.h1a)
+        self.h1bPoints.setCurrentIndex(self.h1b)
+        self.h2aPoints.setCurrentIndex(self.h2a)
+        self.h2bPoints.setCurrentIndex(self.h2b)
+        self.h3aPoints.setCurrentIndex(self.h3a)
+        self.h3bPoints.setCurrentIndex(self.h3b)
+
+        self.a1aPoints.setCurrentIndex(self.a1a)
+        self.a1bPoints.setCurrentIndex(self.a1b)
+        self.a2aPoints.setCurrentIndex(self.a2a)
+        self.a2bPoints.setCurrentIndex(self.a2b)
+        self.a3aPoints.setCurrentIndex(self.a3a)
+        self.a3bPoints.setCurrentIndex(self.a3b)
+
 
     def clearTeam(self, a1, b1, a2, b2, a3, b3):
         a1.clear()
