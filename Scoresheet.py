@@ -113,19 +113,19 @@ class Scoresheet(QWidget):
         self.scoreLayout.addWidget(question.parts,  4, position)
         self.scoreLayout.addWidget(question.notes,  5, position)
         
-        self.homeLayout.addWidget(question.h1qPoints, 1, position)
-        self.homeLayout.addWidget(question.h1sPoints, 2, position)
-        self.homeLayout.addWidget(question.h2qPoints, 3, position)
-        self.homeLayout.addWidget(question.h2sPoints, 4, position)
-        self.homeLayout.addWidget(question.h3qPoints, 5, position)
-        self.homeLayout.addWidget(question.h3sPoints, 6, position)
+        self.homeLayout.addWidget(question.h1aPoints, 1, position)
+        self.homeLayout.addWidget(question.h1bPoints, 2, position)
+        self.homeLayout.addWidget(question.h2aPoints, 3, position)
+        self.homeLayout.addWidget(question.h2bPoints, 4, position)
+        self.homeLayout.addWidget(question.h3aPoints, 5, position)
+        self.homeLayout.addWidget(question.h3bPoints, 6, position)
         
-        self.awayLayout.addWidget(question.a1qPoints, 1, position)
-        self.awayLayout.addWidget(question.a1sPoints, 2, position)
-        self.awayLayout.addWidget(question.a2qPoints, 3, position)
-        self.awayLayout.addWidget(question.a2sPoints, 4, position)
-        self.awayLayout.addWidget(question.a3qPoints, 5, position)
-        self.awayLayout.addWidget(question.a3sPoints, 6, position)
+        self.awayLayout.addWidget(question.a1aPoints, 1, position)
+        self.awayLayout.addWidget(question.a1bPoints, 2, position)
+        self.awayLayout.addWidget(question.a2aPoints, 3, position)
+        self.awayLayout.addWidget(question.a2bPoints, 4, position)
+        self.awayLayout.addWidget(question.a3aPoints, 5, position)
+        self.awayLayout.addWidget(question.a3bPoints, 6, position)
        
 
 if __name__ == '__main__':

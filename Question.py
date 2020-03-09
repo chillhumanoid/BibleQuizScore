@@ -17,20 +17,37 @@ class Question(QWidget):
         self.types      = QComboBox(self)
         self.parts      = QComboBox(self)
         self.notes      = QLineEdit(self)
+        
+        self.h1a        = 0
+        self.h1b        = 0
+        self.h2a        = 0
+        self.h2b        = 0
+        self.h3a        = 0
+        self.h3b        = 0
 
-        self.h1qPoints  = QComboBox(self)
-        self.h1sPoints  = QComboBox(self)
-        self.h2qPoints  = QComboBox(self)
-        self.h2sPoints  = QComboBox(self)
-        self.h3qPoints  = QComboBox(self)
-        self.h3sPoints  = QComboBox(self)
+        self.a1a        = 0
+        self.a1b        = 0
+        self.a2a        = 0
+        self.a2b        = 0
+        self.a3a        = 0
+        self.a3b        = 0
 
-        self.a1qPoints  = QComboBox(self)
-        self.a1sPoints  = QComboBox(self)
-        self.a2qPoints  = QComboBox(self)
-        self.a2sPoints  = QComboBox(self)
-        self.a3qPoints  = QComboBox(self)
-        self.a3sPoints  = QComboBox(self)
+        self.h1aPoints  = QComboBox(self)
+        self.h1bPoints  = QComboBox(self)
+        self.h2aPoints  = QComboBox(self)
+        self.h2bPoints  = QComboBox(self)
+        self.h3aPoints  = QComboBox(self)
+        self.h3bPoints  = QComboBox(self)
+
+        self.a1aPoints  = QComboBox(self)
+        self.a1bPoints  = QComboBox(self)
+        self.a2aPoints  = QComboBox(self)
+        self.a2bPoints  = QComboBox(self)
+        self.a3aPoints  = QComboBox(self)
+        self.a3bPoints  = QComboBox(self)
+        
+        if not overtime:
+            self.points.currentIndexChanged[int].connect(self.changePoints)
         
         self.setDropdowns()
 
@@ -54,33 +71,80 @@ class Question(QWidget):
         self.types.addItems(typeList)
         self.parts.addItems(partList)
         
-        self.h1qPoints.addItems(pointList_ind)
-        self.h1sPoints.addItems(pointList_ind)
-        self.h2qPoints.addItems(pointList_ind)
-        self.h2sPoints.addItems(pointList_ind)
-        self.h3qPoints.addItems(pointList_ind)
-        self.h3sPoints.addItems(pointList_ind)
+        self.h1aPoints.addItems(pointList_ind)
+        self.h1bPoints.addItems(pointList_ind)
+        self.h2aPoints.addItems(pointList_ind)
+        self.h2bPoints.addItems(pointList_ind)
+        self.h3aPoints.addItems(pointList_ind)
+        self.h3bPoints.addItems(pointList_ind)
 
-        self.a1qPoints.addItems(pointList_ind)
-        self.a1sPoints.addItems(pointList_ind)
-        self.a2qPoints.addItems(pointList_ind)
-        self.a2sPoints.addItems(pointList_ind)
-        self.a3qPoints.addItems(pointList_ind)
-        self.a3sPoints.addItems(pointList_ind)
-
+        self.a1aPoints.addItems(pointList_ind)
+        self.a1bPoints.addItems(pointList_ind)
+        self.a2aPoints.addItems(pointList_ind)
+        self.a2bPoints.addItems(pointList_ind)
+        self.a3aPoints.addItems(pointList_ind)
+        self.a3bPoints.addItems(pointList_ind)
 
 
         self.label.setAlignment(Qt.AlignCenter)
+        
         self.label.setFixedWidth(55)
         self.points.setFixedWidth(55)
         self.types.setFixedWidth(55)
         self.parts.setFixedWidth(55)
         self.notes.setFixedWidth(55)
-        self.h1qPoints.setFixedWidth(55)
-        self.h1sPoints.setFixedWidth(55)
-        self.h2qPoints.setFixedWidth(55)
-        self.h2sPoints.setFixedWidth(55)
-        self.h3qPoints.setFixedWidth(55)
-        self.h3sPoints.setFixedWidth(55)
-
         
+        self.h1aPoints.setFixedWidth(55)
+        self.h1bPoints.setFixedWidth(55)
+        self.h2aPoints.setFixedWidth(55)
+        self.h2bPoints.setFixedWidth(55)
+        self.h3aPoints.setFixedWidth(55)
+        self.h3bPoints.setFixedWidth(55)
+        
+        self.a1aPoints.setFixedWidth(55)
+        self.a1bPoints.setFixedWidth(55)
+        self.a2aPoints.setFixedWidth(55)
+        self.a2bPoints.setFixedWidth(55)
+        self.a3aPoints.setFixedWidth(55)
+        self.a3bPoints.setFixedWidth(55)
+
+    def changePoints(self, i):
+        if i == 0:
+            pointList = [" ", "+", "-"]
+        elif i == 1:
+            pointList = [" ", "10", "-5"]
+        elif i == 2:
+            pointList = [" ", "20", "-10"]
+        elif i == 3:
+            pointList = [" ", "30", "-15"]
+
+        self.clearTeam(self.h1aPoints, self.h1bPoints, self.h2aPoints,
+                       self.h2bPoints, self.h3aPoints, self.h3bPoints)
+        
+        self.clearTeam(self.a1aPoints, self.a1bPoints, self.a2aPoints,
+                       self.a2bPoints, self.a3aPoints, self.a3bPoints)
+
+        self.addPoints(pointList, self.h1aPoints, self.h1bPoints,
+                       self.h2aPoints, self.h2bPoints, self.h3aPoints,
+                       self.h3bPoints)
+
+        self.addPoints(pointList, self.a1aPoints, self.a1bPoints,
+                       self.a2aPoints, self.a2bPoints, self.a3aPoints,
+                       self.a3bPoints)
+
+    def clearTeam(self, a1, b1, a2, b2, a3, b3):
+        a1.clear()
+        b1.clear()
+        a2.clear()
+        b2.clear()
+        a3.clear()
+        b3.clear()
+
+    def addPoints(self, pointList, a1, b1, a2, b2, a3, b3):
+        a1.addItems(pointList)
+        b1.addItems(pointList)
+        a2.addItems(pointList)
+        b2.addItems(pointList)
+        a3.addItems(pointList)
+        b3.addItems(pointList)
+
