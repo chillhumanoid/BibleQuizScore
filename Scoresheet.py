@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QWidget, QLabel, QComboBox, QApplication, QGroupBox, QGridLayout, QVBoxLayout, QLineEdit
 from PyQt5.QtCore import *
 from Question import Question
-
+from Stats import Stats
 
 class Scoresheet(QWidget):
 
@@ -14,6 +14,8 @@ class Scoresheet(QWidget):
         self.scoreBox = QGroupBox()
         self.homeTeam = QGroupBox()
         self.awayTeam = QGroupBox()
+        
+        self.stats = Stats()
         
         self.scoreLayout = QGridLayout()
         self.homeLayout  = QGridLayout()
